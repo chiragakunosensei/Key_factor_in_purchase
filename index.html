@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="chart_div"></div>
+    <br/>
+    <div id="btn-group">
+     
+    </div>
+      <script>
+    google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+       var data = google.visualization.arrayToDataTable([
+         ['Recommendation From...', 'Survey Responses', { role: 'style' }],
+         ['Celebrity', 1, '#b87333'],            // RGB value
+         ['Promotional Offer', 4, 'silver'],            // English color name
+         ['Advertisement', 7, 'gold'],
+            ['Healthcare Professional', 15, 'silver'],            // English color name
+         ['Family/Friend', 23, 'gold'],
+
+    
+      ]);
+
+        var options = {
+          chart: {
+            title: 'What is the key factor in purchasing a new facial product?',
+          },
+          bars: 'vertical',
+          vAxis: {format: 'decimal',
+          title: 'Survey Responses'
+          },
+          height: 400,
+          
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+        
+  </script>
+      
+    
+</html>
+
+ 
+    
