@@ -1,0 +1,1 @@
+# Key_factor_in_purchase
